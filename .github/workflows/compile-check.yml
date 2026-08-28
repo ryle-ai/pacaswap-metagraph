@@ -1,0 +1,13 @@
+name: compile check
+
+on:
+  push:
+    branches: [ci/compile-check]
+
+jobs:
+  call-workflow-setup-environment:
+    uses: ./.github/workflows/setup-environment.yml
+    with:
+      tessellation_commit_hash: "5e3098078bc664aff025cd488d57286edba64678"
+      use_merge_commit: true
+    secrets: inherit
